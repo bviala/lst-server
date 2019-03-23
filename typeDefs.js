@@ -7,5 +7,13 @@ module.exports = gql`
   type Post {
     id: ID!
     name: String!
+    comments_count: Int
+    votes_count: Int
+    tagline: String
+    screenshot_url: String
+    makers: [Maker]
+  }
+  type Maker {
+    id: ID!
   }
 `
