@@ -18,8 +18,9 @@ class ProductHuntAPI extends RESTDataSource {
     request.headers.set('Host', 'api.producthunt.com');
   }
 
-  async getPosts() {
-    return this.get('posts');
+  async getPosts(fromDaysAgo) {
+    const query = fromDaysAgo ? `posts?days_ago=${fromDaysAgo}` : 'posts'
+    return this.get(query);
   }
 }
 

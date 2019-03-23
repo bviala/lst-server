@@ -2,7 +2,7 @@ const { gql } = require('apollo-server');
 
 module.exports = gql`
   type Query {
-    posts: [Post]
+    posts(daysAgo: Int): [Post]
   }
   type Post {
     id: ID!

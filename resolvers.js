@@ -1,7 +1,7 @@
 module.exports = {
   Query: {
-    posts: async (_source, _args, { dataSources }) => {
-      const result = await dataSources.productHuntAPI.getPosts();
+    posts: async (_source, { daysAgo }, { dataSources }) => {
+      const result = await dataSources.productHuntAPI.getPosts(daysAgo);
       return result.posts
     },
   }
